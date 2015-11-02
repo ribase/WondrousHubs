@@ -1,0 +1,5 @@
+plugin.tx_wondroushubs.view {
+	templateRootPaths.default = EXT:wondrous_hubs/Resources/Private/Templates/
+	partialRootPaths.default = EXT:wondrous_hubs/Resources/Private/Partials/
+	layoutRootPaths.default = EXT:wondrous_hubs/Resources/Private/Layouts/
+}
