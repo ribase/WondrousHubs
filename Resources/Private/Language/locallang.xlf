@@ -18,6 +18,10 @@
 			<trans-unit id="flux.example.fields.settings.helloWorld">
 				<source>Example input</source>
 			</trans-unit>
+			<trans-unit id="settings.category">
+                <source>mk</source>
+                <target>Medizinische Kompetenz</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
