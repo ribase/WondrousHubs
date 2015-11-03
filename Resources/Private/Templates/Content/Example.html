@@ -10,7 +10,7 @@
 			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
 			<flux:field.input name="settings.helloWorld" required="true" />
 
-			<flux:field.inline.fal name="settings.image" multiple="FALSE" maxItems="1" />
+			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
 
 		</flux:form>
 	</f:section>
@@ -27,8 +27,9 @@
 			My template file is EXT:wondrous_hubs/Resources/Private/Content/Example.html.
 		</p>
 		<h3>Frontend output</h3>
-		<a href="{image.url}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" rel="gallery"><f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" />
-
+		<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
+			<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" />
+		</f:for>
 		<p>
 			{settings.helloWorld}
 		</p>
