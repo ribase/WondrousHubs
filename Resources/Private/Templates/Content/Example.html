@@ -32,7 +32,7 @@
 	<f:section name="Main">
 		<div class="tx-dce-pi1">
 
-
+			{settings.yyy}
 			<div class="hubpicture">
 				<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
 					<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" />
