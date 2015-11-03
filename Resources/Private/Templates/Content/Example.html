@@ -16,7 +16,7 @@
 			<flux:field.text name="settings.teasertext" rows="5" cols="30" required="TRUE" />
 
 			<flux:field.select label="yyy" name="settings.category" items="{
-				mk: 'Medizinische Kompetenz',
+				mk: {0: '50-50', 1: '50% - 50%'},
                 fk: 'Fokus',
                 ak: 'Aktuell',
                 ar: 'Artikel',
@@ -40,7 +40,8 @@
 			</div>
 			<div class="hubcontent">
 				<div class="section {settings.category}">
-					<f:translate key="{settings.category}" />
+					{settings.category.0}
+					{settings.category.1}
 				</div>
 				<h3 class="headline">
 					{settings.headline}
