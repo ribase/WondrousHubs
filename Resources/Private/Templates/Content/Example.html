@@ -9,27 +9,24 @@
 		<flux:form id="example" options="{group: 'FCE'}">
 			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
 
-			<flux:field.input name="headline" required="true"/>
+			<flux:field.input name="settings.headline" required="true"/>
 
 			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
 
-			<flux:field.text name="teasertext" rows="5" cols="30" required="TRUE" />
+			<flux:field.text name="settings.teasertext" rows="5" cols="30" required="TRUE" />
 
 			<flux:field.select label="yyy" name="settings.yyy" items="{
-                1: '1',
-                2: '2',
-                3: '3',
-                4: '4'
+				mk: 'Medizinische Kompetenz',
+                fk: 'Fokus',
+                ak: 'Aktuell',
+                ar: 'Artikel',
+                si: 'Schwerpunkt Interdisziplinarität',
+                iv: 'Im Video',
+                in: 'Information'
             }" />
 
 
 		</flux:form>
-	</f:section>
-
-	<f:section name="Preview">
-		<!-- If you wish, place custom backend preview content here -->
-		<strong>Your Input:</strong><br />
-		{settings.helloWorld}
 	</f:section>
 
 	<f:section name="Main">
@@ -46,19 +43,15 @@
 					Medizinische Kompetenz
 				</div>
 				<h3 class="headline">
-					{headline}
+					{settings.headline}
 				</h3>
 				<div class="text">
 					<p>Das Bauchzentrum wendet sämtliche endoskopischen Untersuchungen und Methoden der Funktionsdiagnostik an und führt alle Operationen des Magendarm-Traktes, der Hormonorgane und der Adipositas durch.</p>
 					<div class="hublink">
-						<f:if condition="{link}">
-							<f:link.page pageUid="{link}" title="{headline}" class="readmore">read more</f:link.page>
-						</f:if>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</f:section>
 </div>
-
-
