@@ -8,9 +8,20 @@
 	<f:section name="Configuration">
 		<flux:form id="example" options="{group: 'FCE'}">
 			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
-			<flux:field.input name="settings.helloWorld" required="true" />
+
+			<flux:field.input name="headline" required="true"/>
 
 			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
+
+			<flux:field.text name="teasertext" rows="5" cols="30" required="TRUE" />
+
+			<flux:field.select label="yyy" name="settings.yyy" items="{
+                1: '1',
+                2: '2',
+                3: '3',
+                4: '4'
+            }" />
+
 
 		</flux:form>
 	</f:section>
@@ -22,16 +33,32 @@
 	</f:section>
 
 	<f:section name="Main">
-		<h3>I am a content element!</h3>
-		<p>
-			My template file is EXT:wondrous_hubs/Resources/Private/Content/Example.html.
-		</p>
-		<h3>Frontend output</h3>
-		<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
-			<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" />
-		</f:for>
-		<p>
-			{settings.helloWorld}
-		</p>
+		<div class="tx-dce-pi1">
+
+
+			<div class="hubpicture">
+				<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
+					<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" />
+				</f:for>
+			</div>
+			<div class="hubcontent">
+				<div class="section mk">
+					Medizinische Kompetenz
+				</div>
+				<h3 class="headline">
+					{headline}
+				</h3>
+				<div class="text">
+					<p>Das Bauchzentrum wendet sämtliche endoskopischen Untersuchungen und Methoden der Funktionsdiagnostik an und führt alle Operationen des Magendarm-Traktes, der Hormonorgane und der Adipositas durch.</p>
+					<div class="hublink">
+						<f:if condition="{link}">
+							<f:link.page pageUid="{link}" title="{headline}" class="readmore">read more</f:link.page>
+						</f:if>
+					</div>
+				</div>
+			</div>
+		</div>
 	</f:section>
 </div>
+
+
