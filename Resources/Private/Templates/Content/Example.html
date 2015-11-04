@@ -10,23 +10,21 @@
 			<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
 
 
-			<flux:form.sheet name="options" label="Options">
 
-				<flux:field.select label="Category" name="settings.category" items="{
-					mk: 'Medizinische Kompetenz',
-					fk: 'Fokus',
-					ak: 'Aktuell',
-					ar: 'Artikel',
-					si: 'Schwerpunkt Interdisziplinarität',
-					iv: 'Im Video',
-					in: 'Information'
-				}" />
+			<flux:field.select label="Category" name="settings.category" items="{
+				mk: 'Medizinische Kompetenz',
+				fk: 'Fokus',
+				ak: 'Aktuell',
+				ar: 'Artikel',
+				si: 'Schwerpunkt Interdisziplinarität',
+				iv: 'Im Video',
+				in: 'Information'
+			}" />
 
-				<flux:field.input name="settings.link" label="Link">
-					<flux:wizard.link activeTab="Page" />
-				</flux:field.input>
-				<flux:field.input name="settings.linktext" maxCharacters="32" required="1" label="Linktext"/>
-			</flux:form.sheet>
+			<flux:field.input name="settings.link" label="Link">
+				<flux:wizard.link activeTab="Page" />
+			</flux:field.input>
+			<flux:field.input name="settings.linktext" maxCharacters="32" required="1" label="Linktext"/>
 
 			<flux:form.sheet name="Text" label="Text">
 				<flux:field.text name="settings.teasertext" label="Whatever" enableRichText="1" required="TRUE" />
