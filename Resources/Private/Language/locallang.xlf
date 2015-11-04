@@ -3,6 +3,18 @@
 	<file source-language="en" datatype="plaintext" original="messages" product-name="wondrous_hubs" date="2015-11-02T15:22:28+00:00">
 		<header/>
 		<body>
+		    <trans-unit id="flux.standard">
+                <source>MultiHub</source>
+            </trans-unit>
+            <trans-unit id="flux.standard.description">
+                <source>MultiHub</source>
+            </trans-unit>
+            <trans-unit id="flux.example">
+                <source>MultiHub element</source>
+            </trans-unit>
+            <trans-unit id="flux.example.description">
+                <source>MultiHub element</source>
+                </trans-unit>
 			<trans-unit id="flux.category.mk">
 			    <source>Medical expertise</source>
             </trans-unit>
