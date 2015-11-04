@@ -28,7 +28,11 @@
 			</flux:field.input>
 			<flux:field.input name="settings.linktext" maxCharacters="32" required="1"/>
 
-			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
+			<flux:form.sheet name="Image" label="Image">
+				<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
+			</flux:form.sheet>
+
+
 
 		</flux:form>
 	</f:section>
