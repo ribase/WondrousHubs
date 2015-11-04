@@ -9,7 +9,7 @@ plugin.tx_wondroushubs {
 		container {
 			types {
 				default = div
-				Hubs = div
+				Example = div
 			}
 		}
 	}
