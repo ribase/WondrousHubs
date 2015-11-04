@@ -32,39 +32,38 @@
 		<div class="tx-dce-pi1">
 			<div class="hubpicture">
 				<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
-					<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" />
+					<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" width="460c" height="auto" />
 				</f:for>
 			</div>
 			<div class="hubcontent">
 				<div class="section {settings.category}">
 					<f:if condition="{settings.category} == 'mk'">
-						{f:translate(id: 'flux.category.mk')}
 						<f:translate key="flux.category.mk" extensionName="Vendor.WondrousHubs"/>
 					</f:if>
 					<f:if condition="{settings.category} == 'fk'">
-						{f:translate(id: 'flux.category.fk')}
+						<f:translate key="flux.category.fk" extensionName="Vendor.WondrousHubs"/>
 					</f:if>
 					<f:if condition="{settings.category} == 'ak'">
-						{f:translate(id: 'flux.category.ak')}
+						<f:translate key="flux.category.ak" extensionName="Vendor.WondrousHubs"/>
 					</f:if>
 					<f:if condition="{settings.category} == 'ar'">
-						{f:translate(id: 'flux.category.ar')}
+						<f:translate key="flux.category.ar" extensionName="Vendor.WondrousHubs"/>
 					</f:if>
 					<f:if condition="{settings.category} == 'si'">
-						{f:translate(id: 'flux.category.si')}
+						<f:translate key="flux.category.si" extensionName="Vendor.WondrousHubs"/>
 					</f:if>
 					<f:if condition="{settings.category} == 'iv'">
-						{f:translate(id: 'flux.category.iv')}
+						<f:translate key="flux.category.iv" extensionName="Vendor.WondrousHubs"/>
 					</f:if>
 					<f:if condition="{settings.category} == 'in'">
-						{f:translate(id: 'flux.category.in')}
+						<f:translate key="flux.category.in" extensionName="Vendor.WondrousHubs"/>
 					</f:if>
 				</div>
 				<h3 class="headline">
 					{settings.headline}
 				</h3>
 				<div class="text">
-					<p>Das Bauchzentrum wendet sämtliche endoskopischen Untersuchungen und Methoden der Funktionsdiagnostik an und führt alle Operationen des Magendarm-Traktes, der Hormonorgane und der Adipositas durch.</p>
+					{settings.teasertext}
 					<div class="hublink">
 
 					</div>
