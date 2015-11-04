@@ -11,7 +11,6 @@
 
 			<flux:field.input name="settings.headline" required="true"/>
 
-			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
 
 			<flux:field.text name="settings.teasertext" label="Whatever" enableRichText="1" required="TRUE" />
 
@@ -24,6 +23,13 @@
                 iv: 'Im Video',
                 in: 'Information'
             }" />
+
+			<flux:field.input name="settings.link">
+				<flux:wizard.link activeTab="page"/>
+			</flux:field.input>
+
+
+			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
 
 		</flux:form>
 	</f:section>
@@ -65,7 +71,7 @@
 				<div class="text">
 					{settings.teasertext}
 					<div class="hublink">
-
+						{settings.link}
 					</div>
 				</div>
 			</div>
