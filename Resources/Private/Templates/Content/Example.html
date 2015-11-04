@@ -72,6 +72,9 @@
 					{settings.teasertext}
 					<div class="hublink">
 						{settings.link}
+						<f:if condition="{settings.link}">
+							<f:link.page pageUid="{settings.link}" title="{settings.link}" class="readmore">{settings.link}</f:link.page>
+						</f:if>
 					</div>
 				</div>
 			</div>
