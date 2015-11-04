@@ -12,7 +12,7 @@
 
 			<flux:form.sheet name="options" label="Options">
 
-				<flux:field.select label="yyy" name="settings.category" items="{
+				<flux:field.select label="Category" name="settings.category" items="{
 					mk: 'Medizinische Kompetenz',
 					fk: 'Fokus',
 					ak: 'Aktuell',
@@ -22,10 +22,10 @@
 					in: 'Information'
 				}" />
 
-				<flux:field.input name="settings.link">
+				<flux:field.input name="settings.link" label="Link">
 					<flux:wizard.link activeTab="Page" />
 				</flux:field.input>
-				<flux:field.input name="settings.linktext" maxCharacters="32" required="1"/>
+				<flux:field.input name="settings.linktext" maxCharacters="32" required="1" label="Linktext"/>
 			</flux:form.sheet>
 
 			<flux:form.sheet name="Text" label="Text">
@@ -33,15 +33,11 @@
 			</flux:form.sheet>
 
 			<flux:form.sheet name="Image" label="Image">
-				<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
-			</flux:form.sheet>
-
-			<flux:form.sheet name="Iframe" label="Iframe">
-				<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
+				<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" label="Image"/>
 			</flux:form.sheet>
 
 			<flux:form.sheet name="EmbedVideo" label="Embedded Video">
-				<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
+				<flux:field.input name="settings.videoid" label="Video ID"/>
 			</flux:form.sheet>
 
 		</flux:form>
@@ -49,11 +45,18 @@
 
 	<f:section name="Main">
 		<div class="tx-dce-pi1">
-			<div class="hubpicture">
-				<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
-					<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" width="460c" height="auto" />
-				</f:for>
-			</div>
+			<f:if condition="{settings.images}">
+				<div class="hubpicture">
+					<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
+						<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" width="460c" height="auto" />
+					</f:for>
+				</div>
+			</f:if>
+			<f:if condition="{settings.videoid}">
+				<div class="hubvideo">
+					<iframe src="https://player.vimeo.com/video/{settings.videoid}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0" height="300" width="100%"></iframe>
+				</div>
+			</f:if>
 			<div class="hubcontent">
 				<div class="section {settings.category}">
 					<f:if condition="{settings.category} == 'mk'">
@@ -85,7 +88,9 @@
 					</v:tag>
 				</h3>
 				<div class="text">
-					{settings.teasertext}
+					<f:if condition="{settings.teasertext}">
+						{settings.teasertext}
+					</f:if>
 					<div class="hublink">
 						<f:if condition="{settings.link}">
 							<f:link.page pageUid="{settings.link}" title="{settings.linktext}" class="readmore">{settings.linktext}</f:link.page>
