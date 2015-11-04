@@ -23,12 +23,10 @@
 
 			<flux:field.text name="settings.teasertext" label="Whatever" enableRichText="1" required="TRUE" />
 
-			<flux:form.sheet name="link">
-				<flux:field.input name="settings.link">
-					<flux:wizard.link activeTab="Page" />
-				</flux:field.input>
-				<flux:field.input name="settings.linktext" maxCharacters="32" required="1"/>
-			</flux:form.sheet>
+			<flux:field.input name="settings.link">
+				<flux:wizard.link activeTab="Page" />
+			</flux:field.input>
+			<flux:field.input name="settings.linktext" maxCharacters="32" required="1"/>
 
 			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
 
