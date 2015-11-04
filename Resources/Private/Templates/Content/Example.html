@@ -13,7 +13,7 @@
 
 			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
 
-			<flux:field.text name="settings.teasertext" rows="5" cols="30" required="TRUE" />
+			<flux:field.text name="settings.teasertext" label="Whatever" enableRichText="1" required="TRUE" />
 
 			<flux:field.select label="yyy" name="settings.category" items="{
 				mk: 'Medizinische Kompetenz',
@@ -25,14 +25,11 @@
                 in: 'Information'
             }" />
 
-
 		</flux:form>
 	</f:section>
 
 	<f:section name="Main">
 		<div class="tx-dce-pi1">
-
-
 			<div class="hubpicture">
 				<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
 					<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" />
@@ -40,7 +37,27 @@
 			</div>
 			<div class="hubcontent">
 				<div class="section {settings.category}">
-					<f:debug>{settings}</f:debug>
+					<f:if condition="{settings.category} == 'mk'">
+						{f:translate(id: 'flux.category.mk')}
+					</f:if>
+					<f:if condition="{settings.category} == 'fk'">
+						{f:translate(id: 'flux.category.fk')}
+					</f:if>
+					<f:if condition="{settings.category} == 'ak'">
+						{f:translate(id: 'flux.category.ak')}
+					</f:if>
+					<f:if condition="{settings.category} == 'ar'">
+						{f:translate(id: 'flux.category.ar')}
+					</f:if>
+					<f:if condition="{settings.category} == 'si'">
+						{f:translate(id: 'flux.category.si')}
+					</f:if>
+					<f:if condition="{settings.category} == 'iv'">
+						{f:translate(id: 'flux.category.iv')}
+					</f:if>
+					<f:if condition="{settings.category} == 'in'">
+						{f:translate(id: 'flux.category.in')}
+					</f:if>
 				</div>
 				<h3 class="headline">
 					{settings.headline}

@@ -3,26 +3,28 @@
 	<file source-language="en" datatype="plaintext" original="messages" product-name="wondrous_hubs" date="2015-11-02T15:22:28+00:00">
 		<header/>
 		<body>
-			<trans-unit id="flux.standard">
-				<source>Example page</source>
-			</trans-unit>
-			<trans-unit id="flux.standard.description">
-				<source>Description can be entered in LLL file locallang.xlf of extension test</source>
-			</trans-unit>
-			<trans-unit id="flux.example">
-				<source>Example element</source>
-			</trans-unit>
-			<trans-unit id="flux.example.description">
-				<source>Small example element</source>
-			</trans-unit>
-			<trans-unit id="flux.example.fields.settings.helloWorld">
-				<source>Berliner</source>
-				<target>Kamele</target>
-			</trans-unit>
-			<trans-unit id="settings.category">
-                <source>mk</source>
-                <target>Medizinische Kompetenz</target>
+			<trans-unit id="flux.category.mk">
+			    <source>Medical expertise</source>
+            </trans-unit>
+            <trans-unit id="flux.category.fk">
+                <source>Focus</source>
+            </trans-unit>
+            <trans-unit id="flux.category.ak">
+                <source>Latest</source>
+            </trans-unit>
+            <trans-unit id="flux.category.ar">
+                <source>Article</source>
+            </trans-unit>
+            <trans-unit id="flux.category.si">
+                <source>Focus interdisciplinary</source>
+            </trans-unit>
+            <trans-unit id="flux.category.iv">
+                <source>Video</source>
+            </trans-unit>
+            <trans-unit id="flux.category.in">
+                <source>Information</source>
             </trans-unit>
 		</body>
 	</file>
 </xliff>
+
