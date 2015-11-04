@@ -46,61 +46,9 @@
 
 	<f:section name="Preview">
 
-		<div class="tx-dce-pi1">
-			<f:if condition="{settings.images}">
-				<div class="hubpicture">
-					<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
-						<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" width="460c" height="auto" />
-					</f:for>
-				</div>
-			</f:if>
-			<f:if condition="{settings.videoid}">
-				<div class="hubvideo">
-					<iframe src="https://player.vimeo.com/video/{settings.videoid}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0" height="300" width="100%"></iframe>
-				</div>
-			</f:if>
-			<div class="hubcontent">
-				<div class="section {settings.category}">
-					<f:if condition="{settings.category} == 'mk'">
-						{f:translate(id: 'flux.category.mk')}
-					</f:if>
-					<f:if condition="{settings.category} == 'fk'">
-						{f:translate(id: 'flux.category.fk')}
-					</f:if>
-					<f:if condition="{settings.category} == 'ak'">
-						{f:translate(id: 'flux.category.ak')}
-					</f:if>
-					<f:if condition="{settings.category} == 'ar'">
-						{f:translate(id: 'flux.category.ar')}
-					</f:if>
-					<f:if condition="{settings.category} == 'si'">
-						{f:translate(id: 'flux.category.si')}
-					</f:if>
-					<f:if condition="{settings.category} == 'iv'">
-						{f:translate(id: 'flux.category.iv')}
-					</f:if>
-					<f:if condition="{settings.category} == 'in'">
-						{f:translate(id: 'flux.category.in')}
-					</f:if>
-				</div>
-				<h3 class="headline">
-					<v:tag name="h{settings.content.settings.header.type -> v:or(alternative: record.header_layout) -> v:or(alternative: settings.header.type)}"
-						   class="{settings.content.settings.header.className}" hideIfEmpty="{settings.content.settings.header.hideIfEmpty -> v:or(alternative: 1)}">
-						{record.header -> f:format.raw()}
-					</v:tag>
-				</h3>
-				<div class="text">
-					<f:if condition="{settings.teasertext}">
-						{settings.teasertext}
-					</f:if>
-					<div class="hublink">
-						<f:if condition="{settings.link}">
-							<f:link.page pageUid="{settings.link}" title="{settings.linktext}" class="readmore">{settings.linktext}</f:link.page>
-						</f:if>
-					</div>
-				</div>
-			</div>
-		</div>
+		Text: {settings.teasertext} <br />
+
+		Linktext: {settings.linktext}
 
 	</f:section>
 
