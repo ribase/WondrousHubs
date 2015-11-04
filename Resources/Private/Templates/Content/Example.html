@@ -11,9 +11,6 @@
 
 			<flux:field.input name="settings.headline" required="true"/>
 
-
-			<flux:field.text name="settings.teasertext" label="Whatever" enableRichText="1" required="TRUE" />
-
 			<flux:field.select label="yyy" name="settings.category" items="{
 				mk: 'Medizinische Kompetenz',
                 fk: 'Fokus',
@@ -24,10 +21,14 @@
                 in: 'Information'
             }" />
 
-			<flux:field.input name="settings.link">
-				<flux:wizard.link activeTab="page"/>
-			</flux:field.input>
+			<flux:field.text name="settings.teasertext" label="Whatever" enableRichText="1" required="TRUE" />
 
+			<flux:form.sheet name="link">
+				<flux:field.input name="settings.link">
+					<flux:wizard.link activeTab="Page" />
+				</flux:field.input>
+				<flux:field.input name="settings.linktext" maxCharacters="32" required="1"/>
+			</flux:form.sheet>
 
 			<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" />
 
@@ -71,9 +72,8 @@
 				<div class="text">
 					{settings.teasertext}
 					<div class="hublink">
-						{settings.link}
 						<f:if condition="{settings.link}">
-							<f:link.page pageUid="{settings.link}" title="{settings.link}" class="readmore">{settings.link}</f:link.page>
+							<f:link.page pageUid="{settings.link}" title="{settings.link}" class="readmore">{settings.linktext}</f:link.page>
 						</f:if>
 					</div>
 				</div>
