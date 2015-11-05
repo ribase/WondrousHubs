@@ -9,10 +9,10 @@
             <trans-unit id="flux.standard.description">
                 <source>MultiHub</source>
             </trans-unit>
-            <trans-unit id="flux.example">
+            <trans-unit id="flux.hubs">
                 <source>MultiHub element</source>
             </trans-unit>
-            <trans-unit id="flux.example.description">
+            <trans-unit id="flux.hubs.description">
                 <source>MultiHub element</source>
                 </trans-unit>
 			<trans-unit id="flux.category.mk">
