@@ -33,7 +33,7 @@
 			</flux:form.sheet>
 
 			<flux:form.sheet name="Image" label="Image">
-				<flux:field.inline.fal name="settings.images" multiple="FALSE" maxItems="1" label="Image"/>
+				<flux:field.file name="settings.images" multiple="FALSE" maxItems="1" label="Image"/>
 			</flux:form.sheet>
 
 			<flux:form.sheet name="EmbedVideo" label="Embedded Video">
@@ -55,9 +55,7 @@
 		<div class="tx-dce-pi1">
 			<f:if condition="{settings.images}">
 				<div class="hubpicture">
-					<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
-						<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" width="460c" height="auto" />
-					</f:for>
+					<f:image src="{settings.images}" width="460c" height="auto" />
 				</div>
 			</f:if>
 			<f:if condition="{settings.videoid}">
