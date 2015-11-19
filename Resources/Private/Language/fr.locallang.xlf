@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="fr" datatype="plaintext" original="messages" product-name="wondrous_hubs" date="2015-11-02T15:22:28+00:00">
+		<header/>
+		<body>
+			<trans-unit id="flux.category.mk">
+			    <source>Medical expertise</source>
+			    <target>Expertise médicale</target>
+            </trans-unit>
+            <trans-unit id="flux.category.fk">
+                <source>Focus</source>
+			    <target>Foyer</target>
+            </trans-unit>
+            <trans-unit id="flux.category.ak">
+                <source>Latest</source>
+			    <target>Actuel</target>
+            </trans-unit>
+            <trans-unit id="flux.category.ar">
+                <source>Article</source>
+            </trans-unit>
+            <trans-unit id="flux.category.si">
+                <source>Focus interdisciplinary</source>
+			    <target>Pluridisciplinarité</target>
+            </trans-unit>
+            <trans-unit id="flux.category.iv">
+                <source>Video</source>
+			    <target>Video</target>
+            </trans-unit>
+            <trans-unit id="flux.category.in">
+                <source>Information</source>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>
+
