@@ -9,18 +9,23 @@
             </trans-unit>
             <trans-unit id="flux.category.fk">
                 <source>Focus</source>
+			    <target>Fokus</target>
             </trans-unit>
             <trans-unit id="flux.category.ak">
                 <source>Latest</source>
+			    <target>Aktuelles</target>
             </trans-unit>
             <trans-unit id="flux.category.ar">
                 <source>Article</source>
+			    <target>Artikel</target>
             </trans-unit>
             <trans-unit id="flux.category.si">
                 <source>Focus interdisciplinary</source>
+			    <target>Schwerpunkt Interdisziplinarität</target>
             </trans-unit>
             <trans-unit id="flux.category.iv">
                 <source>Video</source>
+			    <target>Im Video</target>
             </trans-unit>
             <trans-unit id="flux.category.in">
                 <source>Information</source>
