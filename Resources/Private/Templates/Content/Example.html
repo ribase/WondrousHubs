@@ -23,14 +23,15 @@
 
 
 			<flux:form.sheet name="links" label="Links">
+				<flux:field.select label="Target" name="settings.target" items="{
+				  self: 'Gleiches Fenster',
+				  blank: 'Neues Fenster'
+				}" />
 				<flux:field.input name="settings.link" label="Link">
 					<flux:wizard.link activeTab="Page" />
 				</flux:field.input>
 				<flux:field.input name="settings.linktext" maxCharacters="255" label="Linktext"/>
-				<flux:field.select label="Target" name="settings.target" items="{
-				  self: 'Gleiches Fenster',
-				  blank: 'Neues Fenster',
-				}" />
+
 			</flux:form.sheet>
 
 			<flux:form.sheet name="Text" label="Text">
