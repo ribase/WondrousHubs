@@ -24,8 +24,8 @@
 
 			<flux:form.sheet name="links" label="Links">
 				<flux:field.select label="Target" name="settings.target" items="{
-				  self: 'Gleiches Fenster',
-				  blank: 'Neues Fenster'
+				  _self: 'Gleiches Fenster',
+				  _blank: 'Neues Fenster'
 				}" />
 				<flux:field.input name="settings.link" label="Link">
 					<flux:wizard.link activeTab="Page" />
