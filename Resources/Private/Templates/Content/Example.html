@@ -10,6 +10,7 @@
 
 			<flux:form.sheet name="category" label="Category">
 				<flux:field.select label="Category" name="settings.category" items="{
+				  no: 'Keine Kategorie',
 					mk: 'Medizinische Kompetenz',
 					fk: 'Fokus',
 					ak: 'Aktuell',
@@ -25,7 +26,7 @@
 				<flux:field.input name="settings.link" label="Link">
 					<flux:wizard.link activeTab="Page" />
 				</flux:field.input>
-				<flux:field.input name="settings.linktext" maxCharacters="32" label="Linktext"/>
+				<flux:field.input name="settings.linktext" maxCharacters="255" label="Linktext"/>
 			</flux:form.sheet>
 
 			<flux:form.sheet name="Text" label="Text">
@@ -64,29 +65,35 @@
 				</div>
 			</f:if>
 			<div class="hubcontent">
-				<div class="section {settings.category}">
-					<f:if condition="{settings.category} == 'mk'">
-						{f:translate(id: 'flux.category.mk')}
-					</f:if>
-					<f:if condition="{settings.category} == 'fk'">
-						{f:translate(id: 'flux.category.fk')}
-					</f:if>
-					<f:if condition="{settings.category} == 'ak'">
-						{f:translate(id: 'flux.category.ak')}
-					</f:if>
-					<f:if condition="{settings.category} == 'ar'">
-						{f:translate(id: 'flux.category.ar')}
-					</f:if>
-					<f:if condition="{settings.category} == 'si'">
-						{f:translate(id: 'flux.category.si')}
-					</f:if>
-					<f:if condition="{settings.category} == 'iv'">
-						{f:translate(id: 'flux.category.iv')}
-					</f:if>
-					<f:if condition="{settings.category} == 'in'">
-						{f:translate(id: 'flux.category.in')}
-					</f:if>
-				</div>
+
+        <f:if condition="{settings.category} == 'no'">
+          <f:then></f:then>
+          <f:else>
+            <div class="section {settings.category}">
+              <f:if condition="{settings.category} == 'mk'">
+                {f:translate(id: 'flux.category.mk')}
+              </f:if>
+              <f:if condition="{settings.category} == 'fk'">
+                {f:translate(id: 'flux.category.fk')}
+              </f:if>
+              <f:if condition="{settings.category} == 'ak'">
+                {f:translate(id: 'flux.category.ak')}
+              </f:if>
+              <f:if condition="{settings.category} == 'ar'">
+                {f:translate(id: 'flux.category.ar')}
+              </f:if>
+              <f:if condition="{settings.category} == 'si'">
+                {f:translate(id: 'flux.category.si')}
+              </f:if>
+              <f:if condition="{settings.category} == 'iv'">
+                {f:translate(id: 'flux.category.iv')}
+              </f:if>
+              <f:if condition="{settings.category} == 'in'">
+                {f:translate(id: 'flux.category.in')}
+              </f:if>
+            </div>
+          </f:else>
+        </f:if>
 				<h3 class="headline">
 					<v:tag name="h{settings.content.settings.header.type -> v:or(alternative: record.header_layout) -> v:or(alternative: settings.header.type)}"
 						   class="{settings.content.settings.header.className}" hideIfEmpty="{settings.content.settings.header.hideIfEmpty -> v:or(alternative: 1)}">
