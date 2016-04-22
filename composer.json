@@ -11,9 +11,5 @@
     "replace": {
         "WondrousHubs": "self.version",
         "ribase/WondrousHubs": "self.version"
-    },
-    "config": {
-        "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin"
     }
 }
