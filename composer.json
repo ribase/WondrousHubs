@@ -9,7 +9,11 @@
     },
     "version": "0.0.1",
     "replace": {
-    "WondrousHubs": "self.version",
-    "ribase/WondrousHubs": "self.version"
-  }
+        "WondrousHubs": "self.version",
+        "ribase/WondrousHubs": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    }
 }
