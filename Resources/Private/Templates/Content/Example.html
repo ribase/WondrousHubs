@@ -23,15 +23,10 @@
 
 
 			<flux:form.sheet name="links" label="Links">
-				<flux:field.select label="Target" name="settings.target" items="{
-				  _self: 'Gleiches Fenster',
-				  _blank: 'Neues Fenster'
-				}" />
 				<flux:field.input name="settings.link" label="Link">
 					<flux:wizard.link activeTab="Page" />
 				</flux:field.input>
 				<flux:field.input name="settings.linktext" maxCharacters="255" label="Linktext"/>
-
 			</flux:form.sheet>
 
 			<flux:form.sheet name="Text" label="Text">
@@ -111,7 +106,7 @@
 					</f:if>
 					<f:if condition="{settings.link}">
 						<div class="hublink">
-							<f:link.page pageUid="{settings.link}" target="{settings.target}" title="{settings.linktext}" class="readmore">{settings.linktext}</f:link.page>
+							<f:link.page pageUid="{settings.link}" title="{settings.linktext}" class="readmore">{settings.linktext}</f:link.page>
 						</div>
 					</f:if>
 				</div>
