@@ -5,5 +5,5 @@ if (!defined('TYPO3_MODE')) {
 
 TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Wondrous Hubs');
 
-\FluidTYPO3\Flux\Core::registerProviderExtensionKey('wondroushubs', 'Content');
+\FluidTYPO3\Flux\Core::registerProviderExtensionKey('Vendor.WondrousHubs', 'Content');
 
