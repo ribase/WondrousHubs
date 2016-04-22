@@ -9,7 +9,7 @@
     },
     "version": "0.0.1",
     "replace": {
-    "news": "self.version",
-    "typo3-ter/news": "self.version"
+    "WondrousHubs": "self.version",
+    "ribase/WondrousHubs": "self.version"
   }
 }
