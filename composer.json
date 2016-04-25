@@ -10,6 +10,6 @@
     "version": "0.0.1",
     "replace": {
         "wondrous_hubs": "self.version",
-        "ribase/WondrousHubs": "self.version"
+        "vendor.WondrousHubs": "self.version"
     }
 }
