@@ -9,8 +9,7 @@
     },
     "version": "0.0.1",
     "replace": {
-        "wondrous_hubs": "self.version",
-        "vendor.WondrousHubs": "self.version"
+        "wondrous_hubs": "self.version"
     }
 }
 
