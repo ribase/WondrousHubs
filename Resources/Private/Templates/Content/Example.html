@@ -1,15 +1,15 @@
 <div xmlns="http://www.w3.org/1999/xhtml" lang="en"
-	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
-	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
-	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
 
-	<f:layout name="Content" />
+  <f:layout name="Content" />
 
-	<f:section name="Configuration">
-		<flux:form id="hubs">
+  <f:section name="Configuration">
+    <flux:form id="hubs">
 
-			<flux:form.sheet name="category" label="Category">
-				<flux:field.select label="Category" name="settings.category" items="{
+      <flux:form.sheet name="category" label="Category">
+        <flux:field.select label="Category" name="settings.category" items="{
 				  no: 'Keine Kategorie',
 					mk: 'Medizinische Kompetenz',
 					fk: 'Fokus',
@@ -19,52 +19,53 @@
 					iv: 'Im Video',
 					in: 'Information'
 				}" />
-			</flux:form.sheet>
+      </flux:form.sheet>
 
 
-			<flux:form.sheet name="links" label="Links">
-				<flux:field.input name="settings.link" label="Link">
-					<flux:wizard.link activeTab="Page" />
-				</flux:field.input>
-				<flux:field.input name="settings.linktext" maxCharacters="255" label="Linktext"/>
-			</flux:form.sheet>
+      <flux:form.sheet name="links" label="Links">
+        <flux:field.input name="settings.link" label="Link">
+          <flux:wizard.link activeTab="Page" />
+        </flux:field.input>
+        <flux:field.input name="settings.linktext" maxCharacters="255" label="Linktext"/>
+      </flux:form.sheet>
 
-			<flux:form.sheet name="Text" label="Text">
-				<flux:field.text name="settings.teasertext" label="Whatever" enableRichText="1" />
-			</flux:form.sheet>
+      <flux:form.sheet name="Text" label="Text">
+        <flux:field.text name="settings.teasertext" label="Whatever" enableRichText="1" />
+      </flux:form.sheet>
 
-			<flux:form.sheet name="Image" label="Image">
-				<flux:field.file name="settings.images" multiple="FALSE" maxItems="1" label="Image"/>
-			</flux:form.sheet>
+      <flux:form.sheet name="Image" label="Image">
+        <flux:field.inline.fal name="image" required="0" maxItems="1" minItems="1"/>
+      </flux:form.sheet>
 
-			<flux:form.sheet name="EmbedVideo" label="Embedded Video">
-				<flux:field.input name="settings.videoid" label="Video ID"/>
-			</flux:form.sheet>
+      <flux:form.sheet name="EmbedVideo" label="Embedded Video">
+        <flux:field.input name="settings.videoid" label="Video ID"/>
+      </flux:form.sheet>
 
-		</flux:form>
-	</f:section>
+    </flux:form>
+  </f:section>
 
-	<f:section name="Preview">
+  <f:section name="Preview">
 
-		Text: {settings.teasertext} <br />
+    Text: {settings.teasertext} <br />
 
-		Linktext: {settings.linktext}
+    Linktext: {settings.linktext}
 
-	</f:section>
+  </f:section>
 
-	<f:section name="Main">
-		<div class="tx-dce-pi1">
-			<f:if condition="{settings.images}">
-				<div class="hubpicture">
-					<f:image src="{settings.images}" width="460c" height="auto" />
-				</div>
-			</f:if>
-			<f:if condition="{settings.videoid}">
-				<div class="hubvideo">
-					<iframe src="https://player.vimeo.com/video/{settings.videoid}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0" height="300" width="100%"></iframe>
-				</div>
-			</f:if>
-			<div class="hubcontent">
+  <f:section name="Main">
+    {v:content.resources.fal(field: 'image') -> v:iterator.first() -> v:variable.set(name: 'image')}
+    <div class="tx-dce-pi1">
+      <f:if condition="{image}">
+        <div class="hubpicture">
+          <f:image treatIdAsReference="1" src="{image.id}" title="{image.title}" alt="{image.alternative}" width="660c" height="auto"/><br/>
+        </div>
+      </f:if>
+      <f:if condition="{settings.videoid}">
+        <div class="hubvideo">
+          <iframe src="https://player.vimeo.com/video/{settings.videoid}" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0" height="300" width="100%"></iframe>
+        </div>
+      </f:if>
+      <div class="hubcontent">
 
         <f:if condition="{settings.category} == 'no'">
           <f:then></f:then>
@@ -94,23 +95,23 @@
             </div>
           </f:else>
         </f:if>
-				<h3 class="headline">
-					<v:tag name="h{settings.content.settings.header.type -> v:or(alternative: record.header_layout) -> v:or(alternative: settings.header.type)}"
-						   class="{settings.content.settings.header.className}" hideIfEmpty="{settings.content.settings.header.hideIfEmpty -> v:or(alternative: 1)}">
-						{record.header -> f:format.raw()}
-					</v:tag>
-				</h3>
-				<div class="text">
-					<f:if condition="{settings.teasertext}">
-						<f:format.html>{settings.teasertext}</f:format.html>
-					</f:if>
-					<f:if condition="{settings.link}">
-						<div class="hublink">
-							<f:link.page pageUid="{settings.link}" title="{settings.linktext}" class="readmore">{settings.linktext}</f:link.page>
-						</div>
-					</f:if>
-				</div>
-			</div>
-		</div>
-	</f:section>
+        <h3 class="headline">
+          <v:tag name="h{settings.content.settings.header.type -> v:or(alternative: record.header_layout) -> v:or(alternative: settings.header.type)}"
+                 class="{settings.content.settings.header.className}" hideIfEmpty="{settings.content.settings.header.hideIfEmpty -> v:or(alternative: 1)}">
+            {record.header -> f:format.raw()}
+          </v:tag>
+        </h3>
+        <div class="text">
+          <f:if condition="{settings.teasertext}">
+            <f:format.html>{settings.teasertext}</f:format.html>
+          </f:if>
+          <f:if condition="{settings.link}">
+            <div class="hublink">
+              <f:link.page pageUid="{settings.link}" title="{settings.linktext}" class="readmore">{settings.linktext}</f:link.page>
+            </div>
+          </f:if>
+        </div>
+      </div>
+    </div>
+  </f:section>
 </div>
