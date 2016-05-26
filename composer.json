@@ -1,11 +1,11 @@
 {
-    "name": "ribase/WondrousHubs",
+    "name": "ribase/wondroushubs",
     "type": "typo3-cms-extension",
     "description": "todo",
     "license": ["GPL-2.0+"],
-    "keywords": ["TYPO3 CMS", "WondrousHubs"],
+    "keywords": ["TYPO3 CMS", "wondroushubs"],
     "support": {
-        "issues": "https://github.com/ribase/WondrousHubs/"
+        "issues": "https://github.com/ribase/Wondroushubs/"
     },
     "version": "0.6.0",
     "replace": {
