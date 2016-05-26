@@ -7,7 +7,7 @@
     "support": {
         "issues": "https://github.com/ribase/Wondroushubs/"
     },
-    "version": "0.6.0",
+    "version": "1.0.0",
     "replace": {
         "wondrous_hubs": "self.version"
     }
