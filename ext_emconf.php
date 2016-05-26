@@ -13,9 +13,9 @@
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Wondrous Hubs',
 	'description' => 'Hubs for Hub',
-	'category' => 'misc',
+	'category' => 'frontend',
 	'shy' => 0,
-	'version' => '1.0.0',
+	'version' => '1.1.0',
 //	'dependencies' => 'cms,extbase,fluid,flux,fluidcontent,vhs',
 	'conflicts' => '',
 	'priority' => '',
@@ -35,11 +35,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '7.6.0-7.6.99',
-			'cms' => '',
-			'extbase' => '',
-			'fluid' => '',
 			'flux' => '',
-			
 			'fluidcontent' => '',
 			'vhs' => '',
 		),
